@@ -24,9 +24,9 @@ class TmdbService implements ApiService {
       homeDto.push(new SectionModel('originals', 'Originais da Netflix', ObjectMapper.deserializeArray(MovieModel, (await this.basicFetch(`/discover/tv?with_network=213&language=pt-Br&api_key=${this.API_KEY}`)).results)))
       homeDto.push(new SectionModel('trending', 'Recomendados para você', ObjectMapper.deserializeArray(MovieModel, (await this.basicFetch(`/trending/all/week?language=pt-Br&api_key=${this.API_KEY}`)).results)))
       homeDto.push(new SectionModel('toprated', 'Em alta', ObjectMapper.deserializeArray(MovieModel, (await this.basicFetch(`/movie/top_rated?language=pt-Br&api_key=${this.API_KEY}`)).results)))
-      homeDto.push(new SectionModel('action', 'Ação', ObjectMapper.deserializeArray(MovieModel, (await this.basicFetch(`/discover/tv?with_genres=28&language=pt-Br&api_key=${this.API_KEY}`)).results)))
+      homeDto.push(new SectionModel('war', 'Guerra', ObjectMapper.deserializeArray(MovieModel, (await this.basicFetch(`/discover/tv?with_genres=10752&language=pt-Br&api_key=${this.API_KEY}`)).results)))
       homeDto.push(new SectionModel('comedy', 'Comédia', ObjectMapper.deserializeArray(MovieModel, (await this.basicFetch(`/discover/tv?with_genres=35&language=pt-Br&api_key=${this.API_KEY}`)).results)))
-      homeDto.push(new SectionModel('horror', 'Terror', ObjectMapper.deserializeArray(MovieModel, (await this.basicFetch(`/discover/tv?with_genres=27&language=pt-Br&api_key=${this.API_KEY}`)).results)))
+      homeDto.push(new SectionModel('family', 'Familia', ObjectMapper.deserializeArray(MovieModel, (await this.basicFetch(`/discover/tv?with_genres=10751&language=pt-Br&api_key=${this.API_KEY}`)).results)))
       homeDto.push(new SectionModel('romance', 'Romance', ObjectMapper.deserializeArray(MovieModel, (await this.basicFetch(`/discover/tv?with_genres=10749&language=pt-Br&api_key=${this.API_KEY}`)).results)))
       homeDto.push(new SectionModel('documentary', 'Documentarios', ObjectMapper.deserializeArray(MovieModel, (await this.basicFetch(`/discover/tv?with_genres=99&language=pt-Br&api_key=${this.API_KEY}`)).results)))
       return homeDto
